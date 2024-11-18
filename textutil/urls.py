@@ -23,7 +23,7 @@ urlpatterns = [
     path('',views.hello,name = 'hello'),
     path('analyz',views.analyzar,name = 'analyzar'),
     path('about',views.about,name = 'about'),
-    path('add',views.add,name = 'add'),
+    path('contact',views.contect,name = 'add'),
     path('update',views.update,name = 'update'),
     path('remove',views.remove,name = 'remove')
 ]

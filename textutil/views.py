@@ -52,14 +52,14 @@ def analyzar(request):
         param = {'get':get,'analyzar':analyzar}
         get = analyzar
     if removepunc != 'on' and  upper != 'on' and  newlineremover != 'on' and  extraspace != 'on' :
-        return HttpResponse('none')
+        return HttpResponse('<h1> Please enter the text to check puncuation</h1>')
     return render(request,'analyz.html',param)
 
 def about(request):
-    return HttpResponse('about')
+    return render(request,'about.html')
 
-def add(request):
-    return HttpResponse('add')
+def contect(request):
+    return render(request,'contact.html')
 
 def update(request):
     return HttpResponse('update')
