@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>Text Utils</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+      .form-group label {
+        font-weight: bold;
+      }
+      .btn-dark {
+        background-color: #343a40;
+        border: none;
+      }
+      .btn-dark:hover {
+        background-color: #495057;
+      }
+      .custom-switch {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">TextUtils.in</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="alert alert-primary text-center" role="alert">
+        <strong>Welcome to TextUtils!</strong> Transform your text with amazing tools.
+      </div>
+
+      <form action='analyz' method='post'>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="textArea">Enter your text:</label>
+          <textarea class="form-control" name='text' id="textArea" rows="8" placeholder="Type or paste your text here..."></textarea>
+        </div>
+
+        <h5 class="mt-4">Choose your options:</h5>
+        <div class="custom-switch">
+          <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Remove Punctuation</label>
+        </div>
+        <div class="custom-switch">
+          <input type="checkbox" name="uppercase" class="custom-control-input" id="customSwitch2">
+          <label class="custom-control-label" for="customSwitch2">Convert to UPPERCASE</label>
+        </div>
+        <div class="custom-switch">
+          <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch3">
+          <label class="custom-control-label" for="customSwitch3">Remove New Lines</label>
+        </div>
+        <div class="custom-switch">
+          <input type="checkbox" name="extraspace" class="custom-control-input" id="customSwitch4">
+          <label class="custom-control-label" for="customSwitch4">Remove Extra Spaces</label>
+        </div>
+
+        <button type="submit" class="btn btn-dark mt-3">Analyze Text</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
